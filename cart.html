@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Review your building materials order and proceed to checkout. Order via WhatsApp or online checkout with delivery across all 47 counties in Kenya.">
+  <title>Your Cart | Blue Nile Rolling Mills Ltd</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="icons/favicon-192x192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="style.css?v=2.0.0">
+</head>
+
+<body>
+
+  <!-- ===================== TOP BAR ===================== -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span><i class="fa-solid fa-phone"></i><a href="tel:+254xxxxxx">+254xxxxxx</a></span>
+        <span><i class="fa-solid fa-envelope"></i><a href="mailto:info@bizxxxx.com">info@bizxxxx.com</a></span>
+      </div>
+      <div class="top-bar-right">
+        <span><i class="fa-solid fa-truck-fast"></i> Free delivery on orders above Ksh 100,000</span>
+        <span><i class="fa-solid fa-certificate"></i> 100% KEBS Approved</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="header-main">
+        <a href="index.html" class="header-logo">
+          <img src="assets/logo-2.png" alt="Blue Nile Rolling Mills Ltd">
+        </a>
+        <div class="header-search">
+          <input type="text" id="header-search-input" placeholder="Search for TMT bars, mesh, nails...">
+          <button id="header-search-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="header-actions">
+          <a href="tel:+254xxxxxx" class="header-action-btn">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call Sales</span>
+          </a>
+          <a href="https://wa.me/254XXXXXXXXX?text=Hello%20Blue%20Nile%20Rolling%20Mills!%20I%20want%20to%20place%20an%20order." target="_blank" class="header-action-btn" style="color:#25D366;">
+            <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i>
+            <span>WhatsApp</span>
+          </a>
+          <button class="header-action-btn" id="cart-icon-btn" style="position:relative;">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Cart</span>
+            <span class="cart-count" style="display:none;">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <div class="container">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="index.html#about"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+          <li><a href="shop.html"><i class="fa-solid fa-store"></i> Shop</a></li>
+          <li><a href="shop.html?cat=TMT Bars"><i class="fa-solid fa-bars-staggered"></i> TMT Bars</a></li>
+          <li><a href="shop.html?cat=BRC Mesh"><i class="fa-solid fa-border-all"></i> BRC Mesh</a></li>
+          <li><a href="shop.html?cat=Chain Link"><i class="fa-solid fa-link"></i> Chain Link</a></li>
+          <li><a href="shop.html?cat=Nails"><i class="fa-solid fa-thumbtack"></i> Nails</a></li>
+          <li><a href="index.html#contact"><i class="fa-solid fa-phone-volume"></i> Contact</a></li>
+        </ul>
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== CART TOP BANNER ===================== -->
+  <div class="cart-top-banner">
+    <div class="container">
+      <h1><i class="fa-solid fa-cart-shopping"></i> Your Cart</h1>
+      <p>Review your order details and proceed to checkout. You will receive an Order Reference Number once you place your order.</p>
+    </div>
+  </div>
+
+  <!-- ===================== CART MAIN ===================== -->
+  <main class="review-cart-container">
+    <div class="container">
+
+      <!-- Empty Cart View -->
+      <div id="cart-empty-view" style="display:none; text-align:center; padding:80px 20px;">
+        <i class="fa-solid fa-cart-shopping" style="font-size:56px; color:#cbd5e1; margin-bottom:20px;"></i>
+        <h2 style="margin:0 0 10px; color:#1e2d3d;">Your cart is empty</h2>
+        <p style="color:#6b7a8d; margin:0 0 24px;">Explore our catalog to add high quality KEBS certified steel &amp; building materials.</p>
+        <a href="shop.html" class="btn btn-accent"><i class="fa-solid fa-store"></i> Start Shopping</a>
+      </div>
+
+      <div class="review-cart-grid" id="cart-main-grid">
+
+        <!-- Left Column: items + FAQ -->
+        <div class="cart-left-col">
+          <div class="cart-items-list" id="cart-items-container"></div>
+
+          <!-- FAQ -->
+          <section class="cart-faq-section">
+            <h3><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h3>
+            <div class="cart-faq-list">
+              <div class="cart-faq-item">
+                <button class="cart-faq-question" onclick="toggleFaq(this)">
+                  <span>How Much Is Delivery?</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="cart-faq-answer">
+                  Delivery costs are calculated based on your site location and total consignment weight and volume. Subsidized direct mill transport is available across all 47 counties in Kenya. Bulk orders qualify for special delivery discounts.
+                </div>
+              </div>
+              <div class="cart-faq-item">
+                <button class="cart-faq-question" onclick="toggleFaq(this)">
+                  <span>Can I Collect My Order?</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="cart-faq-answer">
+                  Yes. Immediately after making the required deposit, you can choose factory self-collection at our Thika mill at no additional charge. Your order will be reserved, prepared and loaded upon arrival.
+                </div>
+              </div>
+              <div class="cart-faq-item">
+                <button class="cart-faq-question" onclick="toggleFaq(this)">
+                  <span>How Can I Reserve Stock?</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="cart-faq-answer">
+                  Completing the online checkout generates an official Order Reference Number, securing stock allocation for your materials while our team prepares your dispatch.
+                </div>
+              </div>
+              <div class="cart-faq-item">
+                <button class="cart-faq-question" onclick="toggleFaq(this)">
+                  <span>What If I Order More Than What Is Available?</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="cart-faq-answer">
+                  As the direct manufacturer, our Thika plant runs continuous rolling and drawing lines. In the rare event an item is in active production, our dispatch coordinators will advise exact batch times.
+                </div>
+              </div>
+              <div class="cart-faq-item">
+                <button class="cart-faq-question" onclick="toggleFaq(this)">
+                  <span>What Payment Methods Do You Accept?</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="cart-faq-answer">
+                  We accept M-Pesa, Airtel Money, Pesalink, bank transfer and card payments. Payment details are confirmed by our sales team when your order is acknowledged.
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column: Order Summary -->
+        <aside class="order-summary-card">
+          <h3>Order Summary</h3>
+          <div class="summary-detail-row">
+            <span class="summary-label">Reference Number:</span>
+            <span class="summary-val" id="summary-ref-num">-</span>
+          </div>
+          <div class="summary-detail-row">
+            <span class="summary-label" id="summary-weight-label">Delivery cost</span>
+            <span class="summary-val" style="font-weight:400; color:#64748b; font-size:13px;">Checkout to calculate</span>
+          </div>
+          <div class="summary-detail-row">
+            <span class="summary-label">Subtotal (excl. VAT)</span>
+            <span class="summary-val" id="cart-page-subtotal">Ksh 0</span>
+          </div>
+          <div class="summary-detail-row">
+            <span class="summary-label">VAT (16%)</span>
+            <span class="summary-val" id="cart-page-vat">Ksh 0</span>
+          </div>
+          <div class="summary-detail-row total-row">
+            <span class="summary-label">Total Order incl. VAT</span>
+            <span class="summary-val" id="cart-page-total">Ksh 0</span>
+          </div>
+
+          <a href="checkout.html" class="btn-proceed-green" id="btn-proceed-checkout">
+            Proceed to Checkout →
+          </a>
+          <a href="shop.html" class="btn-proceed-green" style="margin-top:10px;">
+            Update Cart / Continue Shopping
+          </a>
+
+          <p style="font-size: 12px; color: #64748b; margin-top: 15px; line-height: 1.5; text-align: center;">
+            <i class="fa-solid fa-lock"></i> Your order is reserved once checkout is complete. Our sales team will contact you to confirm payment &amp; delivery.
+          </p>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo">
+            <img src="assets/logo-2.png" alt="Blue Nile Rolling Mills Ltd">
+          </a>
+          <p>Kenya's leading manufacturer of KEBS-approved KIFARU construction steel and wire products. Direct from the mill to your site.</p>
+          <div style="display:flex;gap:10px;margin-top:16px;">
+            <a href="https://wa.me/254XXXXXXXXX?text=Hello%20Blue%20Nile%20Rolling%20Mills!%20I%20want%20to%20place%20an%20order." target="_blank" style="width:34px;height:34px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i>Home</a></li>
+            <li><a href="index.html#about"><i class="fa-solid fa-chevron-right"></i>About Us</a></li>
+            <li><a href="shop.html"><i class="fa-solid fa-chevron-right"></i>Shop</a></li>
+            <li><a href="cart.html"><i class="fa-solid fa-chevron-right"></i>My Cart</a></li>
+            <li><a href="index.html#contact"><i class="fa-solid fa-chevron-right"></i>Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="shop.html?cat=TMT Bars"><i class="fa-solid fa-chevron-right"></i>KIFARU TMT Bars</a></li>
+            <li><a href="shop.html?cat=BRC Mesh"><i class="fa-solid fa-chevron-right"></i>BRC Mesh</a></li>
+            <li><a href="shop.html?cat=Chain Link"><i class="fa-solid fa-chevron-right"></i>Chain Link</a></li>
+            <li><a href="shop.html?cat=Round Bars"><i class="fa-solid fa-chevron-right"></i>Round Bars</a></li>
+            <li><a href="shop.html?cat=Wire Rods"><i class="fa-solid fa-chevron-right"></i>Wire Rods</a></li>
+            <li><a href="shop.html?cat=Nails"><i class="fa-solid fa-chevron-right"></i>Wire Nails</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="tel:+254xxxxxx"><i class="fa-solid fa-phone"></i>+254xxxxxx</a></li>
+            <li><a href="mailto:info@bizxxxx.com"><i class="fa-solid fa-envelope"></i>info@bizxxxx.com</a></li>
+            <li><a href="https://wa.me/254XXXXXXXXX" target="_blank"><i class="fa-brands fa-whatsapp"></i>WhatsApp Us</a></li>
+            <li><a href="#"><i class="fa-solid fa-location-dot"></i>Thika, Kenya</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Blue Nile Rolling Mills Ltd. All Rights Reserved.</p>
+        <span style="background:var(--accent);color:#fff;padding:3px 10px;border-radius:3px;font-size:11px;font-weight:700;">KEBS
+          APPROVED</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== CART DRAWER ===================== -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
+      <button class="cart-close-btn" id="cart-close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-drawer-items" id="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal"><span>Subtotal</span><span id="cart-subtotal-amount">Ksh 0</span></div>
+      <button class="cart-wa-btn" id="drawer-wa-btn"><i class="fa-solid fa-arrow-right"></i> Proceed to
+        Checkout</button>
+      <button class="cart-view-btn" id="cart-view-btn"><i class="fa-solid fa-cart-shopping"></i> Review Cart</button>
+    </div>
+  </aside>
+
+  <!-- ===================== WHATSAPP FLOAT ===================== -->
+  <div class="wa-float">
+    <a href="https://wa.me/254XXXXXXXXX?text=Hello%20Blue%20Nile%20Rolling%20Mills!%20I%20want%20to%20place%20an%20order." target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js?v=2.0.0"></script>
+  <script>
+    // FAQ accordion + summary ref number
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const ans = item.querySelector('.cart-faq-answer');
+      const icon = btn.querySelector('.faq-icon');
+      const open = ans.style.display === 'block';
+      document.querySelectorAll('.cart-faq-answer').forEach(a => a.style.display = 'none');
+      document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+      if (!open) { ans.style.display = 'block'; if (icon) icon.textContent = '−'; }
+    }
+    const refEl = document.getElementById('summary-ref-num');
+    if (refEl) {
+      let r = sessionStorage.getItem('bnrm_order_ref');
+      if (!r) {
+        const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        r = 'BNRM-';
+        for (let i = 0; i < 7; i++) r += chars.charAt(Math.floor(Math.random() * chars.length));
+        sessionStorage.setItem('bnrm_order_ref', r);
+      }
+      refEl.textContent = r;
+    }
+  </script>
+
+</body></html>

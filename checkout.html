@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout: place your building materials order with Blue Nile Rolling Mills Ltd. Fill in your details and place your order online or confirm via WhatsApp.">
+  <title>Checkout | Blue Nile Rolling Mills Ltd</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="icons/favicon-192x192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=2.0.0">
+  <style>
+
+  .co-top-header{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+  .co-logo-wrap{display:flex;align-items:center;gap:12px;}
+  .co-back-btn{color:#6b7280;font-size:14px;text-decoration:none;display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:6px;transition:background .2s;}
+  .co-back-btn:hover{background:#f3f4f6;}
+  .co-header-logo{height:40px;}
+  .co-secure-badge{font-size:12px;color:#6b7280;display:flex;align-items:center;gap:6px;}
+  .co-secure-badge i{color:#15803d;}
+  .co-main{max-width:1100px;margin:0 auto;padding:32px 20px 60px;}
+  .co-page-title{font-size:22px;font-weight:700;color:#111827;margin-bottom:24px;}
+  .co-grid{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:start;}
+  @media(max-width:860px){.co-grid{grid-template-columns:1fr;}}
+  .co-billing-card{background:#fff;border-radius:10px;border:1px solid #e5e7eb;padding:28px 28px 32px;}
+  .co-section-heading{font-size:18px;font-weight:700;color:#111827;margin:0 0 22px;padding-bottom:14px;border-bottom:2px solid #e5e7eb;}
+  .co-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .co-form-row.full{grid-template-columns:1fr;}
+  @media(max-width:540px){.co-form-row{grid-template-columns:1fr;}}
+  .co-field{display:flex;flex-direction:column;gap:5px;}
+  .co-field label{font-size:13px;font-weight:600;color:#374151;}
+  .co-field label .req{color:#dc2626;margin-left:2px;}
+  .co-field input,.co-field select,.co-field textarea{border:1px solid #d1d5db;border-radius:6px;padding:9px 12px;font-size:14px;color:#111827;background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;width:100%;box-sizing:border-box;}
+  .co-field input:focus,.co-field select:focus,.co-field textarea:focus{border-color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,.1);}
+  .co-field input::placeholder,.co-field textarea::placeholder{color:#9ca3af;}
+  .co-country-static{border:1px solid #d1d5db;border-radius:6px;padding:9px 12px;font-size:14px;color:#374151;background:#f9fafb;font-weight:600;}
+  .co-street2-input{border:1px solid #d1d5db;border-radius:6px;padding:9px 12px;font-size:14px;color:#111827;background:#fff;outline:none;width:100%;box-sizing:border-box;margin-top:8px;}
+  .co-street2-input:focus{border-color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,.1);}
+  .co-collapsible-toggle{display:flex;align-items:center;gap:8px;cursor:pointer;margin-top:18px;font-size:13.5px;color:#111827;user-select:none;}
+  .co-collapsible-toggle input[type=checkbox]{width:16px;height:16px;accent-color:#1d4ed8;cursor:pointer;}
+  .co-collapsible-body{display:none;margin-top:16px;padding-top:16px;border-top:1px dashed #e5e7eb;}
+  .co-collapsible-body.open{display:block;}
+  .co-divider{border:none;border-top:1px solid #e5e7eb;margin:20px 0;}
+  .co-promos-row{display:flex;align-items:center;gap:8px;margin-top:16px;font-size:13px;color:#374151;}
+  .co-promos-row input[type=checkbox]{width:16px;height:16px;accent-color:#1d4ed8;}
+  .co-right-col{position:sticky;top:80px;}
+  .co-order-card{background:#fff;border-radius:10px;border:1px solid #e5e7eb;padding:24px;margin-bottom:20px;}
+  .co-order-card-title{font-size:17px;font-weight:700;color:#111827;margin:0 0 16px;padding-bottom:12px;border-bottom:2px solid #e5e7eb;}
+  .co-order-table{width:100%;border-collapse:collapse;}
+  .co-order-table th{text-align:left;font-size:12px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:.04em;padding:0 0 10px;border-bottom:1px solid #e5e7eb;}
+  .co-order-table th:last-child{text-align:right;}
+  .co-order-table td{padding:12px 0;border-bottom:1px solid #f3f4f6;vertical-align:top;font-size:13.5px;}
+  .co-order-table td:last-child{text-align:right;font-weight:600;white-space:nowrap;}
+  .co-item-name{font-weight:600;color:#111827;display:block;margin-bottom:2px;}
+  .co-item-meta{font-size:12px;color:#6b7280;display:block;}
+  .co-item-qty{font-size:12px;color:#374151;background:#f3f4f6;padding:2px 7px;border-radius:4px;display:inline-block;margin-top:4px;}
+  .co-totals-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;font-size:14px;color:#374151;}
+  .co-totals-row.grand{font-size:17px;font-weight:700;color:#111827;padding-top:14px;border-top:2px solid #e5e7eb;margin-top:4px;}
+  .co-free{color:#15803d;font-weight:600;}
+  .co-totals-vat{font-size:11.5px;color:#6b7280;margin-left:4px;font-weight:400;}
+  .co-payment-card{background:#fff;border-radius:10px;border:1px solid #e5e7eb;padding:20px 24px 22px;margin-bottom:20px;}
+  .co-payment-title{font-size:15px;font-weight:700;color:#111827;margin:0 0 14px;}
+  .co-payment-option{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:2px solid #1d4ed8;border-radius:8px;background:#eff6ff;cursor:pointer;}
+  .co-payment-option input[type=radio]{margin-top:3px;accent-color:#1d4ed8;width:16px;height:16px;}
+  .co-payment-option-body{flex:1;}
+  .co-payment-option-name{font-weight:700;color:#1d4ed8;font-size:14px;}
+  .co-payment-option-desc{font-size:12.5px;color:#374151;margin-top:4px;line-height:1.5;}
+  .co-payment-option-note{font-size:11.5px;color:#6b7280;margin-top:6px;line-height:1.5;}
+  .co-ipay-logo{font-size:11px;background:#1d4ed8;color:#fff;padding:2px 7px;border-radius:4px;font-weight:700;margin-bottom:4px;display:inline-block;}
+  .co-privacy-notice{font-size:12px;color:#6b7280;line-height:1.6;margin:16px 0 12px;}
+  .co-privacy-notice a{color:#1d4ed8;}
+  .co-terms-row{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#374151;margin-bottom:10px;line-height:1.5;}
+  .co-terms-row input[type=checkbox]{width:16px;height:16px;margin-top:2px;accent-color:#1d4ed8;flex-shrink:0;}
+  .co-terms-row a{color:#1d4ed8;}
+  .co-place-order-btn{width:100%;padding:15px;background:#1d4ed8;color:#fff;font-size:16px;font-weight:700;border:none;border-radius:8px;cursor:pointer;letter-spacing:.03em;transition:background .2s,transform .1s,box-shadow .2s;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px;}
+  .co-place-order-btn:hover{background:#1e40af;box-shadow:0 4px 18px rgba(29,78,216,.35);transform:translateY(-1px);}
+  .co-place-order-btn:active{transform:translateY(0);}
+  .co-secure-note{text-align:center;font-size:12px;color:#6b7280;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:5px;}
+  .co-secure-note i{color:#15803d;}
+  #co-success-view{display:none;}
+  .co-success-wrap{max-width:700px;margin:40px auto;padding:0 20px 60px;}
+  .co-success-banner{background:linear-gradient(135deg,#15803d,#16a34a);border-radius:12px;color:#fff;padding:32px 28px;text-align:center;margin-bottom:28px;}
+  .co-success-banner i{font-size:48px;margin-bottom:12px;}
+  .co-success-banner h2{font-size:24px;margin:0 0 8px;font-weight:700;}
+  .co-success-banner p{font-size:15px;opacity:.9;margin:0;}
+  .co-pay-instructions{background:#fff;border-radius:10px;border:1px solid #e5e7eb;padding:24px 28px;margin-bottom:24px;}
+  .co-pay-instructions h3{font-size:16px;font-weight:700;color:#111827;margin:0 0 16px;}
+  .co-pay-step{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px;color:#374151;}
+  .co-pay-step:last-child{border-bottom:none;}
+  .co-pay-step-num{width:26px;height:26px;border-radius:50%;background:#1d4ed8;color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .co-receipt{background:#fff;border-radius:10px;border:1px solid #e5e7eb;overflow:hidden;margin-bottom:24px;}
+  .co-receipt-header{background:#f8fafc;padding:16px 24px;border-bottom:1px solid #e5e7eb;}
+  .co-receipt-header h3{margin:0;font-size:15px;font-weight:700;color:#111827;}
+  .co-receipt-body{padding:20px 24px;}
+  .co-receipt-row{display:flex;justify-content:space-between;padding:7px 0;font-size:13.5px;color:#374151;border-bottom:1px solid #f3f4f6;}
+  .co-receipt-row:last-child{border-bottom:none;}
+  .co-receipt-row.total{font-weight:700;color:#111827;font-size:15px;padding-top:12px;}
+  .co-receipt-items table{width:100%;border-collapse:collapse;font-size:13px;}
+  .co-receipt-items th{text-align:left;font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;padding:8px 0;border-bottom:1px solid #e5e7eb;}
+  .co-receipt-items td{padding:8px 0;border-bottom:1px solid #f9fafb;vertical-align:top;}
+  .co-receipt-items td:last-child,.co-receipt-items th:last-child{text-align:right;}
+  .co-success-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .co-success-actions a,.co-success-actions button{flex:1;min-width:160px;padding:13px;border-radius:8px;font-size:14px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;border:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .2s;}
+  .co-btn-wa{background:#25D366;color:#fff;}
+  .co-btn-shop{background:#f3f4f6;color:#374151;}
+  .co-btn-wa:hover,.co-btn-shop:hover{opacity:.9;}
+  @media(max-width:860px){.co-grid{grid-template-columns:1fr;}.co-right-col{position:static !important;order:0 !important;margin-top:20px;}}
+
+  /* ===== Checkout page additions ===== */
+  .co-summary-items { display: flex; flex-direction: column; gap: 10px; margin: 14px 0 18px; }
+  .co-summary-row { display: flex; justify-content: space-between; gap: 14px; font-size: 13.5px; color: #374151; line-height: 1.5; }
+  .co-summary-row small { color: #9ca3af; }
+  .co-summary-divider { border-top: 1px dashed #e5e7eb; margin: 14px 0; }
+  .co-receipt-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+  .co-wa-confirm {
+    display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: #fff;
+    padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14.5px;
+    text-decoration: none; transition: background .25s ease;
+  }
+  .co-wa-confirm:hover { background: #1FB959; }
+  .co-continue-btn {
+    display: inline-flex; align-items: center; gap: 8px; background: #132235; color: #fff;
+    padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14.5px;
+    text-decoration: none; transition: background .25s ease;
+  }
+  .co-continue-btn:hover { background: #0c1a28; }
+  .co-empty-note {
+    background: #fef2f2; border: 1px solid #fecaca; color: #991b1b;
+    padding: 12px 16px; border-radius: 8px; font-size: 14px; margin-bottom: 18px;
+  }
+  </style>
+</head>
+
+<body style="background:#f0f2f5;">
+
+  <!-- ===================== CHECKOUT TOP HEADER ===================== -->
+  <header class="co-top-header">
+    <div class="co-logo-wrap">
+      <a href="index.html" class="co-back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Shop</a>
+      <a href="index.html">
+        <img src="assets/logo-2.png" alt="Blue Nile Rolling Mills Ltd" class="co-header-logo" style="height:46px;width:auto;object-fit:contain;">
+      </a>
+    </div>
+    <div class="co-secure-badge">
+      <i class="fa-solid fa-lock"></i> Secure Checkout
+    </div>
+  </header>
+
+  <!-- ===================== CHECKOUT FORM VIEW ===================== -->
+  <div id="co-checkout-view">
+    <main class="co-main">
+      <h1 class="co-page-title">Checkout</h1>
+      <div class="co-grid">
+
+        <!-- INFO BANNER -->
+        <div style="grid-column: 1 / -1; background-color: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; text-align: center;">
+          Fill in your details and click <strong>Place Order</strong>. Our sales team will contact you to confirm payment and delivery.
+        </div>
+
+        <!-- EMPTY CART WARNING -->
+        <div id="co-empty-warning" class="co-empty-note" style="display:none; grid-column: 1 / -1;">
+          <i class="fa-solid fa-triangle-exclamation"></i> Your cart is empty. <a href="shop.html" style="text-decoration:underline;">Add products</a> before checking out.
+        </div>
+
+        <!-- LEFT: BILLING DETAILS -->
+        <div class="co-billing-card" id="customer-details-step">
+          <h2 class="co-section-heading">Billing Details</h2>
+          <form id="co-billing-form" onsubmit="return false;">
+
+            <div class="co-form-row">
+              <div class="co-field">
+                <label for="co-first-name">First name <span class="req">*</span></label>
+                <input type="text" id="co-first-name" placeholder="e.g. John" required="">
+              </div>
+              <div class="co-field">
+                <label for="co-last-name">Last name <span class="req">*</span></label>
+                <input type="text" id="co-last-name" placeholder="e.g. Kamau" required="">
+              </div>
+            </div>
+
+            <div style="margin-bottom:16px;">
+              <label style="font-size:13px;font-weight:600;color:#374151;display:block;margin-bottom:5px;">Country / Region <span style="color:#dc2626;">*</span></label>
+              <div class="co-country-static"><i class="fa-solid fa-flag" style="color:#006600;margin-right:6px;"></i>Kenya</div>
+            </div>
+
+            <div style="margin-bottom:16px;">
+              <div class="co-field">
+                <label for="co-street">Street address <span class="req">*</span></label>
+                <input type="text" id="co-street" placeholder="House number and street name" required="">
+              </div>
+              <input type="text" id="co-street2" class="co-street2-input" placeholder="Order notes e.g landmark for direction (optional)" style="margin-top:10px;">
+            </div>
+
+            <div class="co-form-row full">
+              <div class="co-field">
+                <label for="co-city">Town / City <span class="req">*</span></label>
+                <input type="text" id="co-city" placeholder="e.g. Nairobi" required="">
+              </div>
+            </div>
+
+            <div class="co-form-row full">
+              <div class="co-field">
+                <label for="co-county">County <span class="req">*</span></label>
+                <select id="co-county" required="">
+                  <option value="">Select an option…</option>
+                  <option>Baringo</option><option>Bomet</option><option>Bungoma</option><option>Busia</option>
+                  <option>Elgeyo-Marakwet</option><option>Embu</option><option>Garissa</option><option>Homa Bay</option>
+                  <option>Isiolo</option><option>Kajiado</option><option>Kakamega</option><option>Kericho</option>
+                  <option>Kiambu</option><option>Kilifi</option><option>Kirinyaga</option><option>Kisii</option>
+                  <option>Kisumu</option><option>Kitui</option><option>Kwale</option><option>Laikipia</option>
+                  <option>Lamu</option><option>Machakos</option><option>Makueni</option><option>Mandera</option>
+                  <option>Marsabit</option><option>Meru</option><option>Migori</option><option>Mombasa</option>
+                  <option>Murang'a</option><option>Nairobi County</option><option>Nakuru</option><option>Nandi</option>
+                  <option>Narok</option><option>Nyamira</option><option>Nyandarua</option><option>Nyeri</option>
+                  <option>Samburu</option><option>Siaya</option><option>Taita-Taveta</option><option>Tana River</option>
+                  <option>Tharaka-Nithi</option><option>Trans Nzoia</option><option>Turkana</option><option>Uasin Gishu</option>
+                  <option>Vihiga</option><option>Wajir</option><option>West Pokot</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="co-form-row">
+              <div class="co-field">
+                <label for="co-postcode">Postcode / ZIP (optional)</label>
+                <input type="text" id="co-postcode" placeholder="e.g. 00100">
+              </div>
+              <div class="co-field">
+                <label for="co-phone">Phone <span class="req">*</span></label>
+                <input type="tel" id="co-phone" placeholder="e.g. 0712 345 678" required="">
+              </div>
+            </div>
+
+            <div class="co-form-row full">
+              <div class="co-field">
+                <label for="co-email">Email address (optional)</label>
+                <input type="email" id="co-email" placeholder="e.g. john@example.com">
+              </div>
+            </div>
+
+            <!-- Optional receiver details -->
+            <label class="co-collapsible-toggle" for="co-receiver-chk">
+              <input type="checkbox" id="co-receiver-chk" onchange="toggleCoSection('co-receiver-body',this)">
+              <span class="co-toggle-label">Deliver to a different recipient?</span>
+            </label>
+            <div id="co-receiver-body" style="display:none;">
+              <div class="co-form-row" style="margin-top:14px;">
+                <div class="co-field">
+                  <label for="co-recv-first">Recipient first name</label>
+                  <input type="text" id="co-recv-first" placeholder="e.g. Jane">
+                </div>
+                <div class="co-field">
+                  <label for="co-recv-last">Recipient last name</label>
+                  <input type="text" id="co-recv-last" placeholder="e.g. Wanjiru">
+                </div>
+              </div>
+              <div class="co-form-row" style="margin-top:16px;">
+                <div class="co-field">
+                  <label for="co-recv-phone">Recipient phone</label>
+                  <input type="text" id="co-recv-phone" placeholder="e.g. 0712345678">
+                </div>
+                <div class="co-field">
+                  <label for="co-recv-county">Recipient county / area</label>
+                  <input type="text" id="co-recv-county" placeholder="e.g. Nairobi, Westlands">
+                </div>
+              </div>
+            </div>
+
+            <div class="co-form-row full" style="margin-top:16px;">
+              <div class="co-field">
+                <label for="co-order-notes">Order notes (optional)</label>
+                <textarea id="co-order-notes" style="min-height:80px;resize:vertical;" placeholder="Notes about your order, e.g. special delivery instructions or site access details."></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- RIGHT: ORDER SUMMARY -->
+        <aside class="co-order-card">
+          <h2 class="co-order-card-title">Your Order</h2>
+          <div class="co-summary-items" id="co-summary-items"></div>
+          <div class="co-summary-divider"></div>
+          <div class="co-summary-row" style="font-size:14px;"><span>Subtotal (excl. VAT)</span><strong id="co-summary-subtotal">Ksh 0</strong></div>
+          <div class="co-summary-row" style="font-size:14px;"><span>VAT (16%)</span><strong id="co-summary-vat">Ksh 0</strong></div>
+          <div class="co-summary-row co-total-row" style="font-size:16px;"><span>Total</span><strong id="co-summary-total">Ksh 0</strong></div>
+
+          <h3 class="co-payment-title">Payment Method</h3>
+          <select id="co-payment-method" style="width:100%; padding:10px; border:1px solid #d1d5db; border-radius:4px; font-size:14px; color:#374151;">
+            <option>Safaricom M-Pesa</option>
+            <option>Airtel Money</option>
+            <option>Pesalink</option>
+            <option>Bank Transfer</option>
+            <option>Pay on Delivery</option>
+          </select>
+
+          <label class="co-terms-row">
+            <input type="checkbox" id="co-terms-chk">
+            <span>I have read and agree to the website <a href="#">terms and conditions</a> <span class="req" style="color:#dc2626;">*</span></span>
+          </label>
+
+          <button class="co-place-order-btn" id="co-place-order-btn" onclick="placeCoOrder()">
+            <i class="fa-solid fa-circle-check"></i> Place Order
+          </button>
+          <p style="font-size:12px;color:#6b7280;text-align:center;margin-top:12px;line-height:1.5;">
+            Your personal data will be used to process your order and support your experience throughout this website.
+          </p>
+        </aside>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ===================== SUCCESS VIEW ===================== -->
+  <div id="co-success-view" style="display:none;">
+    <main class="co-main">
+      <div class="co-success-wrap">
+        <div class="co-success-banner">
+          <i class="fa-solid fa-circle-check"></i>
+          <h2>Order Reserved - Thank You!</h2>
+          <p id="co-success-greeting">Your order has been received and stock is being allocated.</p>
+        </div>
+        <div class="co-receipt">
+          <div class="co-receipt-header">
+            <h3><i class="fa-solid fa-file-invoice" style="margin-right:6px;color:#1d4ed8;"></i> Order Ref: <span id="co-receipt-ref">-</span></h3>
+          </div>
+          <div class="co-receipt-body">
+            <div class="co-receipt-row"><span>Date / Time</span><span id="co-receipt-date">-</span></div>
+            <div class="co-receipt-row"><span>Customer</span><span id="co-receipt-customer">-</span></div>
+            <div class="co-receipt-row"><span>Delivery Address</span><span id="co-receipt-delivery">-</span></div>
+            <div class="co-receipt-row"><span>Payment Method</span><span id="co-receipt-payment">-</span></div>
+            <div style="margin-top:14px;" class="co-receipt-items">
+              <table>
+                <thead><tr><th>Item</th><th>Qty</th><th>Unit</th><th>Subtotal</th></tr></thead>
+                <tbody id="co-receipt-items-body"></tbody>
+              </table>
+            </div>
+            <div class="co-receipt-row total"><span>Total incl. VAT</span><span id="co-receipt-total">-</span></div>
+          </div>
+          <div class="co-receipt-actions">
+            <a href="#" id="co-wa-confirm-btn" target="_blank" class="co-wa-confirm">
+              <i class="fa-brands fa-whatsapp"></i> Confirm Order via WhatsApp
+            </a>
+            <a href="shop.html" id="co-back-btn" class="co-continue-btn">
+              <i class="fa-solid fa-cart-shopping"></i> Continue Shopping
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ===================== WHATSAPP FLOAT ===================== -->
+  <div class="wa-float">
+    <a href="https://wa.me/254XXXXXXXXX?text=Hello%20Blue%20Nile%20Rolling%20Mills!%20I%20want%20to%20place%20an%20order." target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+
+  <script src="script.js?v=2.0.0"></script>
+  <script>
+    // Checkout page init: show empty warning if cart empty
+    document.addEventListener('DOMContentLoaded', () => {
+      const warn = document.getElementById('co-empty-warning');
+      if (warn && !Cart.get().length) warn.style.display = 'block';
+    });
+  </script>
+
+</body></html>
