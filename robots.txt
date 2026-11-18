@@ -1,5 +1,0 @@
-# robots.txt for Blue Nile Rolling Mills Ltd
-User-agent: *
-Allow: /
-
-Sitemap: https://bluenileltd.com/sitemap.xml
